@@ -5,5 +5,6 @@ Therefore there should be some service and registry to define data type e.g. Con
 - Kafka broker should not veryfy message they recieve since its not their responsibility and it will slow kafka.
 - In producer props we provide schema registry url config  
 - In gradle/pom we provide kafka-schema-registry-client and kafka-avro-serializer dependencies
+- Value serializer io.confluent.kafka.serializers.KafkaAvroSerializer
 
 # 
