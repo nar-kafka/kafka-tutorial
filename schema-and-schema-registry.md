@@ -8,6 +8,12 @@ Therefore there should be some service and registry to define data type e.g. Con
 - Value serializer io.confluent.kafka.serializers.KafkaAvroSerializer  
 - Used Avro maven plugin in example.  
 - Used default field in existing avro schema to prevent from breaking existing producer consumer.  
+- KafkaAvroSerializer and KafkaAvroDeserializer (provided by confluent) does all serialization and deserialization work but how do they konw about schema? Deserializer cant deserialize without knowing schema. Answer is schemaregistry.  
+- KafkaAvroSerializer stores the schema details in schema registry and include the id of the schema with message.  
+- KafkaAvroDeserializer takes the schema id from message and get the schema details from schema registry and deserialize message.
+
+
+- Resource : https://www.youtube.com/watch?v=1OdsRuKXWbM
 
 # Avro
 - New type of data format. Like csv (no schema), db (have schema but has to be flat in row and column), json (no schema/typed).  
